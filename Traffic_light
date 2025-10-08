@@ -1,0 +1,28 @@
+#define led_red1_green2     8
+#define led_red2_green1     9
+#define led_yellow1_yellow2  10
+
+void setup()
+{
+  pinMode(led_red1_green2, OUTPUT);
+  pinMode(led_red2_green1, OUTPUT);
+  pinMode(led_yellow1_yellow2, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(led_red1_green2, HIGH);
+  delay(3000);
+  digitalWrite(led_red1_green2, LOW);
+  delay(1000); 
+  
+  digitalWrite(led_yellow1_yellow2, HIGH);
+  delay(500);
+  digitalWrite(led_yellow1_yellow2, LOW);
+  delay(1000);
+      
+  digitalWrite(led_red2_green1, HIGH);
+  delay(3000);
+  digitalWrite(led_red2_green1, LOW);
+  delay(1000); 
+}
