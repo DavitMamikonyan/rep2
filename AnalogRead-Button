@@ -1,0 +1,27 @@
+int ledPin = 5;
+int buttonPin = A0; // use digital pin 2
+int value = 0;
+int button_last_state = 1;
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP); // use internal pull-up
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  value = digitalRead(buttonPin);
+  Serial.println(value);
+  
+  if (value == 0)
+    button_last_state = 1;
+  else 
+    button_last_state = 0;
+      
+  if (value == 0 && button_last_state == 1)  // button pressed
+    digitalWrite(ledPin, HIGH);
+  else               // button released
+    digitalWrite(ledPin, LOW);
+}
